@@ -1,5 +1,6 @@
 @import 'libs/bootstrap-reboot.min';
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'base/variables';
 
 *{
     font-family: 'MuseoModerno', cursive;
@@ -9,7 +10,7 @@
 .container {
     width: 1140px;
     margin: 0 auto;
-    border: 2px solid green;
+    border: 2px solid red;
 }
 
 @media (max-width: 1200px) {
@@ -36,3 +37,6 @@
         padding: 0 10px;
     }
 }
+
+@import 'blocks/promo';
+@import 'blocks/buttons';
