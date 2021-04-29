@@ -1,0 +1,26 @@
+.form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    &__input {
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 0 20px;
+        font-weight: 300;
+        font-size: 14px;
+        color: #4B4B4B;
+        &:nth-child(3) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+}
