@@ -4,10 +4,37 @@
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
+    &_white {
+        color: #fff;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        &_white {
+            font-size: 30px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        &_white {
+            text-align: center;
+            font-size: 22px;
+            line-height: 36px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
     .title {
         font-size: 24px;
+        &_white {
+            font-size: 18px;
+        }
     }
 }
