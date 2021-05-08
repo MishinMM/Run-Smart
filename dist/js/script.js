@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    
+    'use strict';
     //Slider
     let slideIndex = 1,
         slides = document.querySelectorAll('.slider__item'),
@@ -20,9 +20,6 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         slides.forEach((item) => item.style.display = 'none');
-        // for (let i = 0; i < slides.length; i++) {
-        //     slides[i].style.display = 'none';
-        // }
         dots.forEach((item) => item.classList.remove('slider__dots-dot_active'));
 
         slides[slideIndex - 1].style.display = 'block';
@@ -51,3 +48,29 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//JQuery!
+$(document).ready(function() {
+    //Catalog tabs
+    $('ul.catalog__tabs').on('click', 'li:not(.catalog__tabs-tab_active)', function() {
+        $(this)
+          .addClass('catalog__tabs-tab_active').siblings().removeClass('catalog__tabs-tab_active')
+          .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+    });
+
+    //Catalog cards
+    function toggleSlide(item) {
+        $(item).each(function(i) {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                $('.catalog__item-front').eq(i).toggleClass('catalog__item-front_active');
+                $('.catalog__item-back').eq(i).toggleClass('catalog__item-back_active');
+            })
+        });
+    };
+
+    toggleSlide('.catalog__item-link');
+    toggleSlide('.catalog__item-back-link');
+});
+
+
